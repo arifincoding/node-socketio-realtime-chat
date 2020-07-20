@@ -1,0 +1,9 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io()
+    socket.on('userList', (data) => {
+        for (var i = 0; i < data.length; i++) {
+            document.write('<a href="#">' + data[i] + '</a><br>')
+        }
+    })
+</script>

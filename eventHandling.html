@@ -1,0 +1,18 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    // 'message' is build in event client for build in event send in server
+    socket.on('message', function (data) {
+        document.write(data)
+    });
+    socket.on('testerEvent', function (data) {
+        document.write(data.description)
+    })
+    // custom event dari client ke server
+    socket.emit('clientEvent', 'sent an event from the client')
+</script>
+
+<body>
+    <!-- setelah 4 detik hello world kan berubah -->
+    hello world
+</body>

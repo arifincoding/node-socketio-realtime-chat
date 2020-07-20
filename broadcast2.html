@@ -1,0 +1,12 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('newclientconnect', function (data) {
+        document.body.innerHTML = '';
+        document.write(data.description)
+    })
+</script>
+
+<body>
+    hello world
+</body>
